@@ -6,7 +6,7 @@
 /*   By: erramos <erramos@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 15:46:03 by erramos           #+#    #+#             */
-/*   Updated: 2023/11/10 22:23:18 by erramos          ###   ########.fr       */
+/*   Updated: 2023/11/11 14:56:21 by erramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,19 @@ int ft_printf(const char *s, ...)
                         ft_putstr(va_arg(args, char *));
 			i++;
                 }
-		else if (s[i] == '%' && s[i + 1] == 'd' || s[i + 1] == 'i')
+		else if (s[i] == '%' && (s[i + 1] == 'd' || s[i + 1] == 'i'))
 		{
 			ft_putstr(ft_itoa(va_arg(args, int)));
+			i++;
+		}
+		else if (s[i] == '%' && s[i + 1] == 'x' || s[i + 1] == 'X')
+		{
+			ft_printhex(s[i + 1], va_arg(args, int));
+			i++;
+		}
+		else if (s[i] == '%' && s[i + 1] == 'p')
+		{
+			ft_printpoint(va_arg(args, int));
 			i++;
 		}
                 else
@@ -58,8 +68,8 @@ int main()
         char *s = "Olá, mundo!";
 	int	c;
 	
-	c = 0x155;
-        ft_printf("a = %c // s = %s // c = %i // %% = %", a, s, c);
+	c = 155;
+        ft_printf("pointer = %p // s = %s // c = %X // %% = %", &a, s, c);
 
         return 0;
 }
