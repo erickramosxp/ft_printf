@@ -6,14 +6,30 @@
 /*   By: erramos <erramos@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 22:31:42 by erramos           #+#    #+#             */
-/*   Updated: 2023/11/11 15:39:45 by erramos          ###   ########.fr       */
+/*   Updated: 2023/11/11 17:45:21 by erramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libprintf.h"
+#include "ft_printf.h"
+
+int	count_hex(int nb)
+{
+	int	i;
+
+	i = 0;
+	while (nb != 0)
+	{
+		nb = nb / 16;
+		i++;
+	}
+	return (i);
+}
 
 int	ft_printhex(const char c, int nb)
 {
+	int	len;
+
+	len = count_hex(nb);
 	if (nb > 16)
 	{
 		ft_printhex(c, nb / 16);
@@ -28,7 +44,7 @@ int	ft_printhex(const char c, int nb)
 	}
 	else
 		ft_putchar(nb + '0');
-	return (1);
+	return (len);
 }
 /*
 int	main(void)

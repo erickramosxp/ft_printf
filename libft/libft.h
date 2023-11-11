@@ -6,7 +6,7 @@
 /*   By: erramos <erramos@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 19:04:32 by erramos           #+#    #+#             */
-/*   Updated: 2023/11/09 19:10:47 by erramos          ###   ########.fr       */
+/*   Updated: 2023/11/11 17:09:24 by erramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include <stdlib.h>
 
 char    *ft_itoa(int n);
-void    ft_putchar(char c);
-void    ft_putstr(char *s);
+int    ft_putchar(char c);
+int    ft_putstr(char *s);
 size_t  ft_strlen(const char *s);
 char    *ft_strdup(const char *s);
 

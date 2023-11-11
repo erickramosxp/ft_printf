@@ -6,13 +6,14 @@
 /*   By: erramos <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 17:39:11 by erramos           #+#    #+#             */
-/*   Updated: 2023/11/09 18:51:13 by erramos          ###   ########.fr       */
+/*   Updated: 2023/11/11 16:56:25 by erramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
+	return (1);
 }

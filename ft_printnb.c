@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_printnb.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erramos <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: erramos <erramos@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 18:08:22 by erramos           #+#    #+#             */
-/*   Updated: 2023/11/11 16:58:20 by erramos          ###   ########.fr       */
+/*   Created: 2023/11/11 17:02:33 by erramos           #+#    #+#             */
+/*   Updated: 2023/11/11 18:06:46 by erramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
+#include <stdio.h>
 
-int	ft_putstr(char *s)
+int	ft_printnb(int nb)
 {
+	char	*nu;
 	int	len;
 
-	len = ft_strlen(s);
-	write(1, s, len);
+	nu = ft_itoa(nb);
+	len = ft_putstr(nu);
+	free(nu);
 	return (len);
 }

@@ -6,14 +6,30 @@
 /*   By: erramos <erramos@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 13:03:27 by erramos           #+#    #+#             */
-/*   Updated: 2023/11/11 15:40:33 by erramos          ###   ########.fr       */
+/*   Updated: 2023/11/11 17:53:07 by erramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libprintf.h"
+#include "ft_printf.h"
+
+int     count_hex2(int nb)
+{
+        int     i;
+
+        i = 0;
+        while (nb != 0)
+        {
+                nb = nb / 16;
+                i++;
+        }
+        return (i);
+}
 
 int     ft_printhexp(int nb)
 {
+	int	len;
+
+	len = count_hex2(nb);
         if (nb > 16)
         {
                 ft_printhexp(nb / 16);
@@ -25,14 +41,17 @@ int     ft_printhexp(int nb)
         }
         else
                 ft_putchar(nb + '0');
-	return (1);
+	return (len);
 }
 
 int     ft_printpoint(int nb)
 {
+	int	len;
+
+	len = 2;
         write(1, "0x", 2);
-        ft_printhexp(nb);
-	return (1);
+        len += ft_printhexp(nb);
+	return (len);
 }
 /*
 int	main(void)
