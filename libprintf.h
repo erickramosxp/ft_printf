@@ -6,7 +6,7 @@
 /*   By: erramos <erramos@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 16:51:41 by erramos           #+#    #+#             */
-/*   Updated: 2023/11/09 19:23:28 by erramos          ###   ########.fr       */
+/*   Updated: 2023/11/10 22:05:51 by erramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define LIBPRINTF_H
 
 # include <stdarg.h>
-# include <srcs/libft.h>
+# include "srcs/libft.h"
 
 
 #endif
