@@ -6,7 +6,7 @@
 /*   By: erramos <erramos@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 15:46:03 by erramos           #+#    #+#             */
-/*   Updated: 2023/11/11 18:08:09 by erramos          ###   ########.fr       */
+/*   Updated: 2023/11/11 20:16:38 by erramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,12 @@ int	ft_printf(const char *s, ...)
 		}
 		else if (s[i] == '%' && (s[i + 1] == 'x' || s[i + 1] == 'X'))
 		{
-			len += ft_printhex(s[i + 1], va_arg(args, int));
+			len += ft_printhex(s[i + 1], va_arg(args, unsigned long long));
 			i++;
 		}
 		else if (s[i] == '%' && s[i + 1] == 'p')
 		{
-			len += ft_printpoint(va_arg(args, int));
+			len += ft_printpoint(va_arg(args, unsigned long long));
 			i++;
 		}
                 else

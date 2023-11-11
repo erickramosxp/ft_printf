@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erramos <erramos@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 16:51:41 by erramos           #+#    #+#             */
-/*   Updated: 2023/11/11 20:18:26 by erramos          ###   ########.fr       */
+/*   Created: 2023/11/11 16:29:56 by erramos           #+#    #+#             */
+/*   Updated: 2023/11/11 20:26:13 by erramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBPRINTF_H
-# define LIBPRINTF_H
+#include "ft_printf.h"
+#include <stdio.h>
 
-# include <stdarg.h>
-# include "./libft/libft.h"
+int	main(void)
+{
+	void	*a;
+	int	b;
 
-int	ft_printf(const char *s, ...);
-int	ft_printhex(const char c, unsigned long long nb);
-int     ft_printpoint(unsigned long long nb);
-int     ft_printnb(int nb);
+	b = 16;
+	a = &b;
 
-#endif
+	printf("%d", ft_printf("%x", 126654785));
+}
