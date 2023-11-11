@@ -6,7 +6,7 @@
 /*   By: erramos <erramos@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 22:31:42 by erramos           #+#    #+#             */
-/*   Updated: 2023/11/11 12:55:35 by erramos          ###   ########.fr       */
+/*   Updated: 2023/11/11 15:39:45 by erramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	ft_printhex(const char c, int nb)
 	}
 	else
 		ft_putchar(nb + '0');
+	return (1);
 }
 /*
 int	main(void)

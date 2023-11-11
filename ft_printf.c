@@ -6,14 +6,14 @@
 /*   By: erramos <erramos@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 15:46:03 by erramos           #+#    #+#             */
-/*   Updated: 2023/11/11 14:56:21 by erramos          ###   ########.fr       */
+/*   Updated: 2023/11/11 16:33:53 by erramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libprintf.h"
 #include <stdio.h>
 
-int ft_printf(const char *s, ...)
+int	ft_printf(const char *s, ...)
 {
         va_list args;
         int     i;
@@ -42,7 +42,7 @@ int ft_printf(const char *s, ...)
 			ft_putstr(ft_itoa(va_arg(args, int)));
 			i++;
 		}
-		else if (s[i] == '%' && s[i + 1] == 'x' || s[i + 1] == 'X')
+		else if (s[i] == '%' && (s[i + 1] == 'x' || s[i + 1] == 'X'))
 		{
 			ft_printhex(s[i + 1], va_arg(args, int));
 			i++;
@@ -60,8 +60,9 @@ int ft_printf(const char *s, ...)
                 i++;
         }
         va_end(args);
+	return (i);
 }
-
+/*
 int main()
 {
         char a = 'w';
@@ -72,4 +73,4 @@ int main()
         ft_printf("pointer = %p // s = %s // c = %X // %% = %", &a, s, c);
 
         return 0;
-}
+}*/

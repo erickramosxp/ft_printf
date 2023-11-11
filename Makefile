@@ -6,7 +6,7 @@
 #    By: erramos <erramos@student.42.rio>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/09 15:45:17 by erramos           #+#    #+#              #
-#    Updated: 2023/11/11 15:27:53 by erramos          ###   ########.fr        #
+#    Updated: 2023/11/11 16:35:39 by erramos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,20 +14,24 @@ NAME = libftprintf.a
 
 CFLAGS = cc -Wall -Wextra -Werror
 
-FILES =	ft_printf.c ft_printhex.c ft_printpoint.c \
-	libft/ft_itoa.c libft/ft_putchar.c libft/ft_putstr.c \
-	libft/ft_strdup.c libft/strlen.c
+FILES =	ft_printf.c ft_printhex.c ft_printpoint.c
 
-OBJS = $(FILES:.c=.o)
+DIRLIB = libft/
+
+LIBFT =	ft_itoa.c ft_putchar.c ft_putstr.c \
+	ft_strdup.c ft_strlen.c
+
+OBJS = $(FILES:.c=.o) $(LIBFT:.c:.o)
 
 all: $(NAME)
 
 $(NAME):
-	$(CFLAGS) -I. -c $(FILES)
-	ar rcs $(NAME) $(OBJS)
+	$(CFLAGS) -I. -c $(FILES) $(addprefix libft/,$(LIBFT))
+	ar rcs $(NAME) $(OBJS) $(LIBFT:.c=.o)
 
 clean:
 	rm -f $(OBJS)
+	rm -f $(LIBFT:.c=.o)
 
 fclean: clean
 	rm -f $(NAME)

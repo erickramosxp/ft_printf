@@ -6,7 +6,7 @@
 /*   By: erramos <erramos@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 13:03:27 by erramos           #+#    #+#             */
-/*   Updated: 2023/11/11 14:57:52 by erramos          ###   ########.fr       */
+/*   Updated: 2023/11/11 15:40:33 by erramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,14 @@ int     ft_printhexp(int nb)
         }
         else
                 ft_putchar(nb + '0');
+	return (1);
 }
 
 int     ft_printpoint(int nb)
 {
         write(1, "0x", 2);
         ft_printhexp(nb);
+	return (1);
 }
 /*
 int	main(void)
