@@ -6,7 +6,7 @@
 /*   By: erramos <erramos@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 15:46:03 by erramos           #+#    #+#             */
-/*   Updated: 2023/11/11 20:16:38 by erramos          ###   ########.fr       */
+/*   Updated: 2023/11/11 22:55:26 by erramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,11 @@ int	ft_printf(const char *s, ...)
 		else if (s[i] == '%' && s[i + 1] == 'p')
 		{
 			len += ft_printpoint(va_arg(args, unsigned long long));
+			i++;
+		}
+		else if(s[i] == '%' && s[i + 1] == 'u')
+		{
+			len += ft_printu(va_arg(args, unsigned int));
 			i++;
 		}
                 else

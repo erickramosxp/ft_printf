@@ -6,7 +6,7 @@
 #    By: erramos <erramos@student.42.rio>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/09 15:45:17 by erramos           #+#    #+#              #
-#    Updated: 2023/11/11 17:12:48 by erramos          ###   ########.fr        #
+#    Updated: 2023/11/11 22:40:42 by erramos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME = libftprintf.a
 
 CFLAGS = cc -Wall -Wextra -Werror
 
-FILES =	ft_printf.c ft_printhex.c ft_printpoint.c ft_printnb.c
+FILES =	ft_printf.c ft_printhex.c ft_printpoint.c ft_printnb.c \
+	ft_printu.c
 
 DIRLIB = libft/
 

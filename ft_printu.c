@@ -1,25 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printu.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erramos <erramos@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 16:51:41 by erramos           #+#    #+#             */
-/*   Updated: 2023/11/11 22:40:07 by erramos          ###   ########.fr       */
+/*   Created: 2023/11/11 22:21:50 by erramos           #+#    #+#             */
+/*   Updated: 2023/11/11 22:39:31 by erramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBPRINTF_H
-# define LIBPRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include "./libft/libft.h"
+int	len_u(unsigned int nb)
+{
+	int	i;
 
-int	ft_printf(const char *s, ...);
-int	ft_printhex(const char c, unsigned long long nb);
-int     ft_printpoint(unsigned long long nb);
-int     ft_printnb(int nb);
-int	ft_printu(unsigned int nb);
+	i = 0;
+	while (nb != 0)
+	{
+		nb = nb / 10;
+		i++;
+	}
+	return (i);
+}
 
-#endif
+int	ft_printu(unsigned int nb)
+{
+	int	len;
+
+	len = len_u(nb);
+	if (nb > 9)
+	{
+		ft_printu(nb / 10);
+		ft_printu(nb % 10);
+	}
+	else
+		ft_putchar(nb + '0');
+	return (len);
+}
+/*
+int	main(void)
+{
+	ft_printu(4294967295);
+}*/
