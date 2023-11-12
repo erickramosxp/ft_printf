@@ -6,13 +6,13 @@
 /*   By: erramos <erramos@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 22:31:42 by erramos           #+#    #+#             */
-/*   Updated: 2023/11/11 20:17:46 by erramos          ###   ########.fr       */
+/*   Updated: 2023/11/11 23:23:07 by erramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	count_hex(unsigned long long nb)
+int	count_hex(unsigned int nb)
 {
 	int	i;
 
@@ -25,12 +25,17 @@ int	count_hex(unsigned long long nb)
 	return (i);
 }
 
-int	ft_printhex(const char c, unsigned long long nb)
+int	ft_printhex(const char c, unsigned int nb)
 {
 	int	len;
 
+	if (nb == 0)
+	{
+		write(1, "0", 1);
+		return (1);
+	}
 	len = count_hex(nb);
-	if (nb > 16)
+	if (nb >= 16)
 	{
 		ft_printhex(c, nb / 16);
 		ft_printhex(c, nb % 16);

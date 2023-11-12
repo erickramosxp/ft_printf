@@ -6,7 +6,7 @@
 /*   By: erramos <erramos@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 17:02:33 by erramos           #+#    #+#             */
-/*   Updated: 2023/11/11 18:06:46 by erramos          ###   ########.fr       */
+/*   Updated: 2023/11/12 18:19:31 by erramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int	ft_printnb(int nb)
 {
 	char	*nu;
-	int	len;
+	int		len;
 
 	nu = ft_itoa(nb);
 	len = ft_putstr(nu);
