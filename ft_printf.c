@@ -6,7 +6,7 @@
 /*   By: erramos <erramos@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 15:46:03 by erramos           #+#    #+#             */
-/*   Updated: 2023/11/13 14:34:40 by erramos          ###   ########.fr       */
+/*   Updated: 2023/11/13 18:07:20 by erramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,20 @@ int	check_id(char id, va_list args)
 	return (len);
 }
 
+int	check_last(const char *str, int c)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == c)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
 int	ft_printf(const char *s, ...)
 {
 	va_list	args;
@@ -46,7 +60,7 @@ int	ft_printf(const char *s, ...)
 	len = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == '%')
+		if (s[i] == '%' && check_last("cspdiuxX%", s[i + 1]))
 		{
 			len += check_id(s[i + 1], args);
 			i++;
