@@ -6,12 +6,34 @@
 /*   By: erramos <erramos@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 15:46:03 by erramos           #+#    #+#             */
-/*   Updated: 2023/11/12 18:18:57 by erramos          ###   ########.fr       */
+/*   Updated: 2023/11/13 14:34:40 by erramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
+/*#include <stdio.h>*/
+
+int	check_id(char id, va_list args)
+{
+	int	len;
+
+	len = 0;
+	if (id == '%')
+		len += ft_putchar('%');
+	else if (id == 'c')
+		len += ft_putchar(va_arg(args, int));
+	else if (id == 's')
+		len += ft_putstr(va_arg(args, char *));
+	else if (id == 'd' || id == 'i')
+		len += ft_printnb(va_arg(args, int));
+	else if (id == 'x' || id == 'X')
+		len += ft_printhex(id, va_arg(args, unsigned long long));
+	else if (id == 'p')
+		len += ft_printpoint(va_arg(args, unsigned long long));
+	else if (id == 'u')
+		len += ft_printu(va_arg(args, unsigned int));
+	return (len);
+}
 
 int	ft_printf(const char *s, ...)
 {
@@ -24,39 +46,9 @@ int	ft_printf(const char *s, ...)
 	len = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == '%' && s[i + 1] == '%')
+		if (s[i] == '%')
 		{
-			len += ft_putchar('%');
-			i++;
-		}
-		else if (s[i] == '%' && s[i + 1] == 'c')
-		{
-			len += ft_putchar(va_arg(args, int));
-			i++;
-		}
-		else if (s[i] == '%' && s[i + 1] == 's')
-		{
-			len += ft_putstr(va_arg(args, char *));
-			i++;
-		}
-		else if (s[i] == '%' && (s[i + 1] == 'd' || s[i + 1] == 'i'))
-		{
-			len += ft_printnb(va_arg(args, int));
-			i++;
-		}
-		else if (s[i] == '%' && (s[i + 1] == 'x' || s[i + 1] == 'X'))
-		{
-			len += ft_printhex(s[i + 1], va_arg(args, unsigned long long));
-			i++;
-		}
-		else if (s[i] == '%' && s[i + 1] == 'p')
-		{
-			len += ft_printpoint(va_arg(args, unsigned long long));
-			i++;
-		}
-		else if (s[i] == '%' && s[i + 1] == 'u')
-		{
-			len += ft_printu(va_arg(args, unsigned int));
+			len += check_id(s[i + 1], args);
 			i++;
 		}
 		else

@@ -6,7 +6,7 @@
 /*   By: erramos <erramos@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 16:29:56 by erramos           #+#    #+#             */
-/*   Updated: 2023/11/11 23:24:16 by erramos          ###   ########.fr       */
+/*   Updated: 2023/11/13 14:30:31 by erramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ int	main(void)
 	b = 16;
 	a = &b;
 
-	printf("\n%d", ft_printf("%x", 0));
+	printf("\n%d", ft_printf("%p", a));
 }
