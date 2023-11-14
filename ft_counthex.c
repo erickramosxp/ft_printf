@@ -1,45 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printhex.c                                      :+:      :+:    :+:   */
+/*   ft_counthex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erramos <erramos@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 22:31:42 by erramos           #+#    #+#             */
-/*   Updated: 2023/11/14 14:50:47 by erramos          ###   ########.fr       */
+/*   Created: 2023/11/14 14:45:47 by erramos           #+#    #+#             */
+/*   Updated: 2023/11/14 14:48:59 by erramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-int	ft_printhex(const char c, unsigned int nb)
+int	count_hex(unsigned int nb)
 {
-	int	len;
+	int	i;
 
-	if (nb == 0)
+	i = 0;
+	while (nb != 0)
 	{
-		write(1, "0", 1);
-		return (1);
+		nb = nb / 16;
+		i++;
 	}
-	len = count_hex(nb);
-	if (nb >= 16)
-	{
-		ft_printhex(c, nb / 16);
-		ft_printhex(c, nb % 16);
-	}
-	else if (nb >= 10)
-	{
-		if (c == 'X')
-			ft_putchar(nb + 55);
-		else
-			ft_putchar(nb + 87);
-	}
-	else
-		ft_putchar(nb + '0');
-	return (len);
+	return (i);
 }
-/*
-int	main(void)
-{
-	ft_printhex('X', 2347);
-}*/

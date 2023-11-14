@@ -6,13 +6,13 @@
 /*   By: erramos <erramos@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 13:03:27 by erramos           #+#    #+#             */
-/*   Updated: 2023/11/12 18:23:48 by erramos          ###   ########.fr       */
+/*   Updated: 2023/11/14 14:52:06 by erramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	count_hex2(unsigned long long nb)
+int	count_point(unsigned long long nb)
 {
 	int	i;
 
@@ -29,7 +29,7 @@ int	ft_printhexp(unsigned long long nb)
 {
 	int	len;
 
-	len = count_hex2(nb);
+	len = count_point(nb);
 	if (nb >= 16)
 	{
 		ft_printhexp(nb / 16);
