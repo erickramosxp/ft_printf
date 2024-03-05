@@ -44,8 +44,3 @@ int	ft_printu(unsigned int nb)
 		ft_putchar(nb + '0');
 	return (len);
 }
-/*
-int	main(void)
-{
-	ft_printu(4294967295);
-}*/

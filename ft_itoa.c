@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erramos <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: erramos <erramos@student.42.rio>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 17:47:17 by erramos           #+#    #+#             */
-/*   Updated: 2023/11/09 19:00:43 by erramos          ###   ########.fr       */
+/*   Updated: 2023/11/14 16:20:31 by erramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 static int	check_digits(int value, int *signal)
 {

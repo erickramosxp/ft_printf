@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: erramos <erramos@student.42.rio>           +#+  +:+       +#+        */
+/*   By: erramos <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 19:04:32 by erramos           #+#    #+#             */
-/*   Updated: 2023/11/12 18:35:07 by erramos          ###   ########.fr       */
+/*   Created: 2023/10/27 18:08:22 by erramos           #+#    #+#             */
+/*   Updated: 2023/11/14 14:49:45 by erramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdlib.h>
+int	ft_putstr(char *s)
+{
+	int	len;
 
-char	*ft_itoa(int n);
-int		ft_putchar(char c);
-int		ft_putstr(char *s);
-size_t	ft_strlen(const char *s);
-char	*ft_strdup(const char *s);
-
-#endif
+	len = 0;
+	if (!s)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
+	while (s[len])
+	{
+		write(1, &s[len], 1);
+		len++;
+	}
+	return (len);
+}
